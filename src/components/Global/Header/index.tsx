@@ -3,11 +3,9 @@ import { DesktopNav, HeaderWrapper, LogoAndLogin, MenuButton, MobileNav } from "
 
 import logoImg from '../../../../public/logo.svg'
 import Link from "next/link";
-import LoginButton from "../LoginButton";
+import { LoginButton } from "../LoginButton";
 import menuButton from '../../../../public/menu.svg'
 import { useState } from "react";
-
-import { useWindowDimensions } from "@/src/utils/windowWidth";
 
 export default function Header() {
    let [isMenuOpen, setMenuOpen] = useState(false)
@@ -17,14 +15,10 @@ export default function Header() {
    };
 
    return (
-
       <HeaderWrapper
-         isMenuOpen={isMenuOpen}
-         windowSize={useWindowDimensions()}
+         // isMenuOpen={isMenuOpen}
       >
-         <LogoAndLogin
-            windowSize={useWindowDimensions()}
-         >
+         <LogoAndLogin>
             <Image src={logoImg} width={322} height={70} alt="" />
             <div>
                <LoginButton
@@ -39,9 +33,7 @@ export default function Header() {
                />
             </div>
          </LogoAndLogin>
-         <DesktopNav
-            windowSize={useWindowDimensions()}
-         >
+         <DesktopNav>
             <ul>
                <li><Link href={'#'}>Sobre Nós</Link></li>
                <li><Link href={'#'}>Para Você</Link></li>
@@ -56,11 +48,9 @@ export default function Header() {
             </ul>
          </DesktopNav>
          <MobileNav
-            windowSize={useWindowDimensions()}
-            isMenuOpen={isMenuOpen}
+            // isMenuOpen={isMenuOpen}
          >
             <MenuButton
-               windowSize={useWindowDimensions()}
                onClick={() => setMenuOpen(OpenMenu())}
             >
                <Image

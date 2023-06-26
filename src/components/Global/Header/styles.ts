@@ -1,51 +1,73 @@
-import { styled } from "@stitches/react";
+import { styled } from "styled-components";
+
+export const HeaderWrapper = styled.header`
+   
+`
+// variants: {
+//    isMenuOpen: {
+//       true: {
+//          position: 'sticky',
+//          top: 0,
+//          width: '100%',
+//       },
+//       false: {
+//       }
+//    },
+//    windowSize: {
+//       bp1: {
+//          position: 'initial',
+//       },
+//       bp2: {
+//          position: 'initial',
+//       },
+//       bp3: {
+
+//       }
+//    },
+// }
 
 
-export const HeaderWrapper = styled('header', {
-   variants: {
-      isMenuOpen: {
-         true: {
-            position: 'sticky',
-            top: 0,
-            width: '100%',
-         },
-         false: {
+export const LogoAndLogin = styled.div`
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.5rem;
+   background-color: ${props => props.theme.color.secondary_100};
+
+   img {
+      width: 120px;
+      margin: 0 1rem;
+   };
+
+   div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-right: 2rem;
+
+      a {
+         font-size: 0.5rem;
+      }
+   };
+
+   @media(min-width: 768px) {
+      div {
+         margin-right: 2rem;
+
+         a {
+            font-size: 0.8rem;
          }
-      },
-      windowSize: {
-         bp1: {
-            position: 'initial',
-         },
-         bp2: {
-            position: 'initial',
-         },
-         bp3: {
+      };
 
-         }
-      },
+      img {
+         width: 322px;
+         margin-left: 4rem;
+      };
+
       
    }
-})
 
-export const LogoAndLogin = styled('div', {
-   display: 'flex',
-   justifyContent: "space-between",
-   alignItems: 'center',
-   padding: '0.5rem',
-   backgroundColor: '$gray900',
-
-   img: {
-      marginLeft: '4rem',
-   },
-
-   div: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '1rem',
-      marginRight: '4rem',
-   },
-
-   variants: {
+   /* variants: {
       windowSize: {
          bp1: {
             
@@ -64,139 +86,137 @@ export const LogoAndLogin = styled('div', {
             }
          }
       },
+   } */
+`;
+
+
+export const DesktopNav = styled.nav`
+   display: none;
+   justify-content: space-between;
+   align-items: center;
+
+   background-color: ${props => props.theme.color.primary_100};
+   padding: 0.8rem;
+
+   ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0 3rem;
    }
-});
 
+   a {
+      text-decoration: none;
+      color: ${props => props.theme.color.secondary_80};
+   }
 
-export const DesktopNav = styled('nav', {
-   display: 'flex',
-   justifyContent: 'space-between',
-   alignItems: 'center',
-
-   backgroundColor: '$yellow',
-   padding: '0.8rem',
-
-   ul: {
-      display: 'flex',
-      listStyle: 'none',
-      gap: '2rem',
-      margin: '0 3rem',
-   },
-
-   a: {
-      textDecoration: 'none',
-      color: '$gray800',
-   },
-
-   variants: {
+   /* variants: {
       windowSize: {
          'bp1': {
             a: {
-               fontSize: '1.2rem',
+               fontSize: 1.2rem;
             }
-         },
+         }
          'bp2': {
             a: {
-               fontSize: '0.8rem',
+               fontSize: 0.8rem;
             }
          },
          'bp3': {
-            display: 'none',
+            display: none;
             a: {
-               fontSize: '0.6rem',
+               fontSize: 0.6rem;
             },
 
             ul: {
-               flexDirection: 'column',
-               justifyContent: 'center',
-               alignItems: 'center',
+               flexDirection: column;
+               justifyContent: center;
+               alignItems: center;
             }
          }
       }
+   } */
+   `;
+
+export const MobileNav = styled.nav`
+   display: none;
+
+   background-color: ${props => props.theme.color.primary_100};
+   width: 100%;
+   padding: 0.5rem 0;
+
+   ul {
+      list-style: none;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
    }
-})
 
-export const MobileNav = styled('nav', {
-   backgroundColor: '$yellow',
-   width: '100%',
-   padding: '0.5rem 0',
+   a {
+      text-decoration: none;
+      color: ${({ theme }) => theme.color.secondary_80};
+   }
+`;
 
-   ul: {
-      listStyle: 'none',
-
-      height: '100vh',
-      width: '100vw',
-
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '2rem',
-   },
-
-   a: {
-      textDecoration: 'none',
-      color: '$gray800',
-
-      '&:hover': {
-
-      }
-   },
-
-   variants: {
-      windowSize: {
-         bp1: {
-            display: 'none',
-         },
-         bp2: {
-            display: 'none',
-         },
-         bp3: {
-            ul: {
-               position: 'fixed',
-               display: 'flex',
-               backgroundColor: '$yellow',
-            }
-         }
+/* variants: {
+   windowSize: {
+      bp1: {
+         display: 'none',
       },
-
-      isMenuOpen: {
-         true: {
+      bp2: {
+         display: 'none',
+      },
+      bp3: {
+         ul: {
             position: 'fixed',
-         },
-         false: {
-            ul: {
-               display: 'none',
-            }
+            display: 'flex',
+            backgroundColor: '$yellow',
+         }
+      }
+   },
+
+   isMenuOpen: {
+      true: {
+         position: 'fixed',
+      },
+      false: {
+         ul: {
+            display: 'none',
          }
       }
    }
-})
+} */
+// `
 
-export const MenuButton = styled('button', {
-   display: 'none',
-   background: 'transparent',
-   border: 0,
-   padding: '0.5rem',
-   cursor: 'pointer',
+export const MenuButton = styled.button`
+   display: none;
+   background: transparent;
+   border: 0;
+   padding: 0.5rem;
+   cursor: pointer;
 
-   '&:hover': {
-      scale: '1.10',
-   },
+   &:hover {
+      transform: scale(1.10);
+   }
 
-   '&:active': {
-      scale: '0.95',
-   },
+   &:active {
+      transform: scale(0.95);
+   }
+`
 
-   variants: {
-      windowSize: {
-         'bp1': {
+   // variants: {
+   //    windowSize: {
+   //       'bp1': {
 
-         },
-         'bp2': {
+   //       },
+   //       'bp2': {
 
-         },
-         'bp3': {
-            display: 'block',
-         }
-      },
-   },
-})
+   //       },
+   //       'bp3': {
+   //          display: 'block',
+   //       }
+   //    },
+   // },

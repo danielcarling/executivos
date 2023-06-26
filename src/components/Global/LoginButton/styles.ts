@@ -1,36 +1,65 @@
-import { styled } from "@stitches/react";
-import Link from "next/link";
+import { css } from "styled-components";
+import { styled } from "styled-components";
 
-export const Button = styled(Link, {
-   textDecoration: 'none',
-   fontSize: '0.75rem',
-   border: '1px solid $yellow',
-   padding: '0.5rem 1rem',
-   borderRadius: 8,
+interface ButtonProps {
+   bgColor: 'yellow' | 'gray',
+}
 
-   textAlign: 'center',
+export const Button = styled.a<ButtonProps>`
+   text-decoration: none;
+   font-size: 0.75rem;
+   border: 1px solid #ffff44;
+   padding: 0.5rem 1rem;
+   border-radius: 8px;
+   text-align: center;
 
-   variants: {
-      bgColor: {
-         'gray': {
-            backgroundColor: '$gray900',
-            color: '$white',
-         },
-         'yellow': {
-            backgroundColor: '$yellow',
-            color: '$black',
-         }
+   ${({ bgColor, theme }) => {
+    if (bgColor === "yellow") {
+      return css`
+        background-color: ${theme.color.primary_100};
+        color: black;
+      `;
+    } else if (bgColor === "gray") {
+      return css`
+        background-color: ${theme.color.secondary_100};
+        color: white;
+      `;
+    }
+  }}
+
+   /* background-color: ${(props: ButtonProps) =>
+      props.bgColor === 'yellow' ? '#ffff44' : '#0e0e0e'
+   };
+   
+   color: ${(props: ButtonProps) => 
+      props.bgColor === 'yellow' ? 'black' : 'white'
+   };
+
+   @media(min-width: 768px) {
+      scale: 0.8;
+   } */
+   `
+
+/* variants: {
+   bgColor: {
+      'gray': {
+         backgroundColor: '$secondary_100',
+         color: 'white',
       },
-      windosSize: {
-         bp1: {
+      'yellow': {
+         backgroundColor: 'primary_100',
+         color: '$black',
+      }
+   },
+   windosSize: {
+      bp1: {
 
-         },
-         bp2: {
+      },
+      bp2: {
 
-         },
-         bp3: {
-            scale: 0.8,
-         }
+      },
+      bp3: {
+         scale: 0.8,
       }
    }
-})
+} */

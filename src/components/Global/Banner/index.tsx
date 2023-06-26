@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import banner from '../../../../public/banner.png'
-import { Banner, BannerWrapper } from './styles'
+import { BannerWrapper } from './styles'
 
 export default function ExecutivosBanner() {
    return (

@@ -17,7 +17,7 @@ import nossosServicosArte3 from '../../../public/nosso-trabalhos-arte3.png'
 
 import logoImg from '../../../public/logo.svg'
 
-import { useWindowDimensions } from "@/src/utils/windowWidth";
+// import { useWindowDimensions } from "@/src/utils/windowWidth";
 
 export default function Home() {
    return (
