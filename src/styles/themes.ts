@@ -4,13 +4,13 @@ const Theme = {
     primary_40: "#",
     primary_60: "#",
     primary_80: "#",
-    primary_100: "#",
+    primary_100: "#ffff44",
 
     secondary_20: "#",
     secondary_40: "#",
     secondary_60: "#",
-    secondary_80: "#",
-    secondary_100: "#",
+    secondary_80: "#212121",
+    secondary_100: "#0e0e0e",
 
     gray_10: "#F4F7FB",
     gray_20: "#EAEEF5",

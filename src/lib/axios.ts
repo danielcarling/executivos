@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api_url = ""
-export const token = ""
+export const token = "[executivos]token"
 
 export const api = axios.create({
   baseURL: api_url,
