@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   
   body, input, textarea, button {
    font-family: 'Barlow', sans-serif;
-   font-weight: 600;
    color: white;
 }
 `;

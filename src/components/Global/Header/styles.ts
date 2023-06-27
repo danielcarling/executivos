@@ -17,28 +17,6 @@ export const HeaderWrapper = styled.header<MenuButtonProps>`
       }
    }}
 `
-// variants: {
-//    isMenuOpen: {
-//       true: {
-//          position: 'sticky',
-//          top: 0,
-//          width: '100%',
-//       },
-//       false: {
-//       }
-//    },
-//    windowSize: {
-//       bp1: {
-//          position: 'initial',
-//       },
-//       bp2: {
-//          position: 'initial',
-//       },
-//       bp3: {
-
-//       }
-//    },
-// }
 
 
 export const LogoAndLogin = styled.div`

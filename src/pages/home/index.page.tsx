@@ -1,9 +1,3 @@
-import Header from "@/src/components/global/Header";
-import { Container } from "@/src/styles/pages/app";
-import { ContactUs, ContactUsImage, ExecutivosLogo, ImgSection, Jobs, Main, OurJobsArt, StayIn } from "./styles";
-
-import ExecutivosBanner from "@/src/components/global/Banner";
-import ContactForm from "@/src/components/page/Home/ContactUs";
 import Image from "next/image";
 
 import ventureBuilder from '../../../public/venture-builder.png'
@@ -14,17 +8,17 @@ import arteNossosServicos from '../../../public/arte-nossos-servicos.png'
 import nossosServicosArte1 from '../../../public/nosso-trabalhos-arte1.png'
 import nossosServicosArte2 from '../../../public/nosso-trabalhos-arte2.png'
 import nossosServicosArte3 from '../../../public/nosso-trabalhos-arte3.png'
-
-import logoImg from '../../../public/logo.svg'
-
-// import { useWindowDimensions } from "@/src/utils/windowWidth";
+import { ContactUs, ContactUsImage, Container, Main } from "./styles";
+import Header from "@/components/Global/Header";
+import ExecutivosBanner from "@/components/Global/Banner";
+import ContactForm from "@/components/Page/Home/ContactUsForm";
 
 export default function Home() {
    return (
       <Container>
-         {/* <Header /> */}
+         <Header />
          <Main>
-            {/* <ExecutivosBanner />
+            <ExecutivosBanner />
 
             <ContactUs>
                <ContactUsImage>
@@ -34,7 +28,7 @@ export default function Home() {
                <ContactForm />
             </ContactUs>
 
-            <StayIn
+            {/*<StayIn
                windowSize={useWindowDimensions()}
             >
                <h1>FIQUE POR DENTRO</h1>
@@ -66,7 +60,7 @@ export default function Home() {
                />
             </ExecutivosLogo> */}
 
-            <Jobs>
+            {/* <Jobs>
                <OurJobsArt>
                   <Image
                      src={arteNossosServicos}
@@ -103,7 +97,7 @@ export default function Home() {
                      />
                   </div>
                </ImgSection>
-            </Jobs>
+            </Jobs> */}
          </Main>
       </Container>
    )
