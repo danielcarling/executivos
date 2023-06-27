@@ -190,5 +190,5 @@ export const OurCulture = styled.section`
 `
 
 export const Carousel = styled.div`
-
+   padding-left: 5rem;
 `

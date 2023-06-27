@@ -19,9 +19,28 @@ import carrosselArt2 from '../../../public/carrossel1/2.png'
 import carrosselArt3 from '../../../public/carrossel1/3.png'
 import carrosselArt4 from '../../../public/carrossel1/4.png'
 
-
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 export default function Home() {
+   const [sliderRef] = useKeenSlider<HTMLDivElement>({
+      breakpoints: {
+        "(min-width: 375px)": {
+          slides: { perView: 1.5, spacing: 10 },
+        },
+        "(min-width: 600px)": {
+         slides: { perView: 2.3, spacing: 10 },
+       },
+        "(min-width: 768px)": {
+          slides: { perView: 3.2, spacing: 20 },
+        },
+        "(min-width: 1120px)": {
+          slides: { perView: 4.2, spacing: 36 },
+        },
+      },
+      slides: { perView: 1 },
+    })
+   
    return (
       <Container>
          <Header />
@@ -110,30 +129,101 @@ export default function Home() {
             <OurCulture>
                <h2>NOSSA CULTURA</h2>
 
-               <Carousel>
+               <Carousel ref={sliderRef} className="keen-slider">
                   <Image
                      src={carrosselArt1}
                      width={302}
                      height={402}
                      alt=""
+                     className="keen-slider__slide"
+                     style={{
+                        width: 'auto',
+                        height: 'auto',
+                     }}
                   />
                   <Image
                      src={carrosselArt2}
                      width={302}
                      height={402}
                      alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
                   />
                   <Image
                      src={carrosselArt3}
                      width={302}
                      height={402}
                      alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
                   />
                   <Image
                      src={carrosselArt4}
                      width={302}
                      height={402}
                      alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
+                  />
+                  <Image
+                     src={carrosselArt1}
+                     width={302}
+                     height={402}
+                     alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
+                  />
+                  <Image
+                     src={carrosselArt2}
+                     width={302}
+                     height={402}
+                     alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
+                  />
+                  <Image
+                     src={carrosselArt3}
+                     width={302}
+                     height={402}
+                     alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
+                  />
+                  <Image
+                     src={carrosselArt4}
+                     width={302}
+                     height={402}
+                     alt=""
+                     className="keen-slider__slide"
+                     style={{ 
+                        minWidth: 250,
+                        maxWidth: 400,
+                        height: 'auto' 
+                     }}
                   />
                </Carousel>
             </OurCulture>
