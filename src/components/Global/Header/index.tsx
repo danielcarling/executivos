@@ -16,7 +16,7 @@ export default function Header() {
 
    return (
       <HeaderWrapper
-         // isMenuOpen={isMenuOpen}
+         isMenuOpen={isMenuOpen}
       >
          <LogoAndLogin>
             <Image src={logoImg} width={322} height={70} alt="" />
@@ -48,7 +48,7 @@ export default function Header() {
             </ul>
          </DesktopNav>
          <MobileNav
-            // isMenuOpen={isMenuOpen}
+            isMenuOpen={isMenuOpen}
          >
             <MenuButton
                onClick={() => setMenuOpen(OpenMenu())}

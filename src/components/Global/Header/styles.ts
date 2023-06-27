@@ -1,7 +1,21 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
-export const HeaderWrapper = styled.header`
-   
+interface MenuButtonProps {
+   isMenuOpen: boolean,
+}
+
+export const HeaderWrapper = styled.header<MenuButtonProps>`
+   ${({ isMenuOpen }) => {
+      if (isMenuOpen === true) {
+         return css`
+            position: sticky;
+            top: 0;
+            width: 100%;
+      `;
+      } else {
+         return css``;
+      }
+   }}
 `
 // variants: {
 //    isMenuOpen: {
@@ -63,35 +77,11 @@ export const LogoAndLogin = styled.div`
          width: 322px;
          margin-left: 4rem;
       };
-
-      
    }
-
-   /* variants: {
-      windowSize: {
-         bp1: {
-            
-         },
-         bp2: {
-            
-         },
-         bp3: {
-            div: {
-               marginRight: '2rem',
-            },
-
-            img: {
-               width: '30%',
-               margin: '0 1rem'
-            }
-         }
-      },
-   } */
 `;
 
 
 export const DesktopNav = styled.nav`
-   display: none;
    justify-content: space-between;
    align-items: center;
 
@@ -100,9 +90,8 @@ export const DesktopNav = styled.nav`
 
    ul {
       display: flex;
+      align-items: center;
       list-style: none;
-      gap: 2rem;
-      margin: 0 3rem;
    }
 
    a {
@@ -110,37 +99,30 @@ export const DesktopNav = styled.nav`
       color: ${props => props.theme.color.secondary_80};
    }
 
-   /* variants: {
-      windowSize: {
-         'bp1': {
-            a: {
-               fontSize: 1.2rem;
-            }
-         }
-         'bp2': {
-            a: {
-               fontSize: 0.8rem;
-            }
-         },
-         'bp3': {
-            display: none;
-            a: {
-               fontSize: 0.6rem;
-            },
+   @media(min-width: 375px) {
+      display: none;
+   };
 
-            ul: {
-               flexDirection: column;
-               justifyContent: center;
-               alignItems: center;
-            }
-         }
+   @media(min-width: 768px) {
+      display: flex;
+      font-size: 0.8rem;
+      ul {
+         gap: 1.5rem;
+         margin: 0 0.5rem;
       }
-   } */
+   };
+   
+   @media(min-width: 1120px) {
+      display: flex;
+      font-size: 1.1rem;
+      ul{
+         gap: 2rem;
+         margin: 0 2rem;
+      }
+   }
    `;
 
-export const MobileNav = styled.nav`
-   display: none;
-
+export const MobileNav = styled.nav<MenuButtonProps>`
    background-color: ${props => props.theme.color.primary_100};
    width: 100%;
    padding: 0.5rem 0;
@@ -159,40 +141,37 @@ export const MobileNav = styled.nav`
       text-decoration: none;
       color: ${({ theme }) => theme.color.secondary_80};
    }
+
+   @media(min-width: 375px) {
+      ul {
+         position: fixed;
+         display: flex;
+         background-color: ${props => props.theme.color.primary_100};
+      }
+   };
+   @media(min-width: 768px) {
+      display: none;
+   };
+   @media(min-width: 1120px) {
+      display: none;
+   }
+
+   ${({ isMenuOpen }) => {
+      if(isMenuOpen === true) {
+         return css`
+            position: fixed;
+         `;
+      } else {
+         return css`
+            ul {
+            display: none;
+         }
+         `
+      }
+   }}
 `;
 
-/* variants: {
-   windowSize: {
-      bp1: {
-         display: 'none',
-      },
-      bp2: {
-         display: 'none',
-      },
-      bp3: {
-         ul: {
-            position: 'fixed',
-            display: 'flex',
-            backgroundColor: '$yellow',
-         }
-      }
-   },
-
-   isMenuOpen: {
-      true: {
-         position: 'fixed',
-      },
-      false: {
-         ul: {
-            display: 'none',
-         }
-      }
-   }
-} */
-// `
-
 export const MenuButton = styled.button`
-   display: none;
    background: transparent;
    border: 0;
    padding: 0.5rem;
@@ -205,18 +184,14 @@ export const MenuButton = styled.button`
    &:active {
       transform: scale(0.95);
    }
+
+   @media(min-width: 375px) {
+      display: block;
+   }
+   @media(min-width: 768px) {
+      display: none;
+   }
+   @media(min-width: 1120px) {
+      display: none;
+   }
 `
-
-   // variants: {
-   //    windowSize: {
-   //       'bp1': {
-
-   //       },
-   //       'bp2': {
-
-   //       },
-   //       'bp3': {
-   //          display: 'block',
-   //       }
-   //    },
-   // },

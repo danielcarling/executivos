@@ -8,7 +8,7 @@ interface ButtonProps {
 export const Button = styled.a<ButtonProps>`
    text-decoration: none;
    font-size: 0.75rem;
-   border: 1px solid #ffff44;
+   border: 1px solid ${props => props.theme.color.primary_100};
    padding: 0.5rem 1rem;
    border-radius: 8px;
    text-align: center;
