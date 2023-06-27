@@ -47,7 +47,7 @@ export const LogoAndLogin = styled.div`
          margin-right: 2rem;
 
          a {
-            font-size: 0.8rem;
+            font-size: .8rem;
          }
       };
 
@@ -83,7 +83,7 @@ export const DesktopNav = styled.nav`
 
    @media(min-width: 768px) {
       display: flex;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       ul {
          gap: 1.5rem;
          margin: 0 0.5rem;

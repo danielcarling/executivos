@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   };
 
   body {
-   background-color: ${props => props.theme.color.secondary_80};
+   font-weight: 600;
    line-height: 1.6;
   };
   

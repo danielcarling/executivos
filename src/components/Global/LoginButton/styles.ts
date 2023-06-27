@@ -7,6 +7,7 @@ interface ButtonProps {
 
 export const Button = styled.a<ButtonProps>`
    text-decoration: none;
+   font-weight: 600;
    font-size: 0.75rem;
    border: 1px solid ${props => props.theme.color.primary_100};
    padding: 0.5rem 1rem;
@@ -26,40 +27,4 @@ export const Button = styled.a<ButtonProps>`
       `;
     }
   }}
-
-   /* background-color: ${(props: ButtonProps) =>
-      props.bgColor === 'yellow' ? '#ffff44' : '#0e0e0e'
-   };
-   
-   color: ${(props: ButtonProps) => 
-      props.bgColor === 'yellow' ? 'black' : 'white'
-   };
-
-   @media(min-width: 768px) {
-      scale: 0.8;
-   } */
-   `
-
-/* variants: {
-   bgColor: {
-      'gray': {
-         backgroundColor: '$secondary_100',
-         color: 'white',
-      },
-      'yellow': {
-         backgroundColor: 'primary_100',
-         color: '$black',
-      }
-   },
-   windosSize: {
-      bp1: {
-
-      },
-      bp2: {
-
-      },
-      bp3: {
-         scale: 0.8,
-      }
-   }
-} */
+  `

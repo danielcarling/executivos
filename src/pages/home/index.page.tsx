@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import logoImg from '../../../public/logo.svg'
+
 import ventureBuilder from '../../../public/venture-builder.png'
 import arte1 from '../../../public/stay-in-arte1.png'
 import arte2 from '../../../public/stay-in-arte2.png'
@@ -8,7 +10,7 @@ import arteNossosServicos from '../../../public/arte-nossos-servicos.png'
 import nossosServicosArte1 from '../../../public/nosso-trabalhos-arte1.png'
 import nossosServicosArte2 from '../../../public/nosso-trabalhos-arte2.png'
 import nossosServicosArte3 from '../../../public/nosso-trabalhos-arte3.png'
-import { ContactUs, ContactUsImage, Container, Main } from "./styles";
+import { ContactUs, ContactUsImage, Container, ExecutivosLogo, ImgSection, Jobs, Main, OurJobsArt, StayIn } from "./styles";
 import Header from "@/components/Global/Header";
 import ExecutivosBanner from "@/components/Global/Banner";
 import ContactForm from "@/components/Page/Home/ContactUsForm";
@@ -28,9 +30,7 @@ export default function Home() {
                <ContactForm />
             </ContactUs>
 
-            {/*<StayIn
-               windowSize={useWindowDimensions()}
-            >
+            <StayIn>
                <h1>FIQUE POR DENTRO</h1>
                <Image
                   src={ventureBuilder}
@@ -52,13 +52,13 @@ export default function Home() {
             </StayIn>
 
 
-            <ExecutivosLogo>
+           <ExecutivosLogo>
                <Image
                   src={logoImg}
                   sizes="100vw"
                   alt=""
                />
-            </ExecutivosLogo> */}
+            </ExecutivosLogo>
 
             {/* <Jobs>
                <OurJobsArt>
@@ -89,12 +89,14 @@ export default function Home() {
                   </div>
                   <div>
                      <p>CONSULTORIA</p>
-                     <Image
-                        src={nossosServicosArte3}
-                        width={581}
-                        height={182}
-                        alt=""
-                     />
+                     <footer>
+                        <Image
+                           src={nossosServicosArte3}
+                           width={581}
+                           height={182}
+                           alt=""
+                        />
+                     </footer>
                   </div>
                </ImgSection>
             </Jobs> */}
