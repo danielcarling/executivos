@@ -182,3 +182,13 @@ export const ImgSection = styled.div`
    }
 `
 
+export const OurCulture = styled.section`
+   h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+   }
+`
+
+export const Carousel = styled.div`
+
+`
