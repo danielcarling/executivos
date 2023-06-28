@@ -34,14 +34,14 @@ export default function Header() {
             </div>
          </LogoAndLogin>
          <DesktopNav>
-            <ul>
+            <ul className="navbar1">
                <li><Link href={'#'}>Sobre Nós</Link></li>
                <li><Link href={'#'}>Para Você</Link></li>
                <li><Link href={'#'}>Para Empresas</Link></li>
                <li><Link href={'#'}>Portfólio</Link></li>
                <li><Link href={'#'}>Eventos</Link></li>
             </ul>
-            <ul>
+            <ul className="navbar2">
                <li> <Link href={'#'}>Parcerias</Link></li>
                <li><Link href={'#'}>Instagram</Link></li>
                <li><Link href={'#'}>YouTube</Link></li>
