@@ -46,62 +46,38 @@ export const ContactUsImage = styled.div`
 
 export const StayIn = styled.section`
    background-color: ${props => props.theme.color.primary_100};
-   padding: ${px2vw(8)};
-   color: black;
-   padding: ${px2vw(16)} ${px2vw(116)} 0 ${px2vw(116)};
-
-   h1 {
-      font-size: 1.5rem;
-      padding: 0 ${px2vw(16)};
+   padding: 0 ${px2vw(116)};
+   display: flex;
+   flex-direction: column;
+   
+   h2 {
+      font-size: 2.5rem;
       font-weight: 700;
-   };
+      color: black;
+      margin: ${px2vw(36)} 0 ${px2vw(22)};
+   }
 
    img {
       width: 100%;
       height: auto;
-      padding: 0.4rem 1rem;
-   };
-
+      margin-bottom: ${px2vw(22)};
+   }
    div {
       display: flex;
-      gap: ${px2vw(85)};
-   }
-
-   @media(min-width: 375px) {
-      padding: .5rem;
-      h1 {
-         font-size: 1.5rem;
-      };
-      div {
-         flex-direction: column;
-         img {
-            width: 100%;
-         }
+      flex-direction: column;
+      width: 100%;
+      img {
+         width: 100%;
+         height: auto;
       }
-   };
+   }
 
    @media(min-width: 768px) {
-      padding: 1.2rem;
-      h1 {
-         font-size: 2rem;
-      };
       div {
          flex-direction: row;
+         justify-content: space-between;
          img {
-            width: 50%;
-         }
-      }
-   }
-
-   @media(min-width: 1120px) {
-      padding: 2rem;
-      h1 {
-         font-size: 2.5rem;
-      };
-      div {
-         flex-direction: row;
-         img {
-            width: 50%;
+            width: 47%
          }
       }
    }
@@ -110,25 +86,10 @@ export const StayIn = styled.section`
 export const ExecutivosLogo = styled.div`
    display: flex;
    justify-content: center;
-
-   @media(min-width: 375px) {
-      img {
-         margin: 0;
-         width: 250px;
-      }
-   }
-
-   @media(min-width: 768px) {
-      img {
-         margin: 1rem;
-         width: 350px;
-      }
-   }
-   @media(min-width: 1120px) {
-      img {
-         margin: 2.5rem;
-         width: 500px;
-      }
+   img {
+      max-width: ${px2vw(732)};
+      max-height: ${px2vw(150)};
+      margin: ${px2vw(50)} 0;
    }
 `
 
@@ -176,29 +137,11 @@ export const ImgSection = styled.div`
 `
 
 export const OurCulture = styled.section`
-   h2 {
-      
+   h2 {      
       font-weight: 700;
+      font-size: 2.5rem;
+      margin: ${px2vw(21)} 0 ${px2vw(16)} ${px2vw(116)};
    }
-
-   @media(min-width: 375px) {
-      h2 {
-         font-size: 1.8rem;
-         padding: .6rem 0 .6rem 1.5rem;
-      }
-   }
-   @media(min-width: 768px) {
-      h2 {
-         font-size: 1.8rem;
-         padding: 1rem 0 1rem 2.5rem;
-      }
-   }
-   @media(min-width: 1120px) {
-      h2 {
-         font-size: 2.5rem;
-         padding: 1rem 0 1rem 4rem;
-      }
-   }  
 `
 
 export const Carousel = styled.div`
@@ -208,30 +151,19 @@ export const Carousel = styled.div`
 export const CarouselItem = styled.div`
    img {
       object-fit: cover;
+      width: ${px2vw(600)};
+      height: ${px2vw(800)};
    }
-   
-   @media(min-width: 375px) {
-      min-width: 15rem;
-      min-height: 20rem;
-      img {
-         width: 15rem;
-         height: 20rem;
-      }
-   }
+   min-width: ${px2vw(600)};
+   min-height: ${px2vw(800)};
+
    @media(min-width: 768px) {
-      min-width: 16.5rem;
-      min-height: 22rem;
+      min-width: ${px2vw(302)};
+      min-height: ${px2vw(402)};
       img {
-         width: 16.5rem;
-         height: 22rem;
+         object-fit: cover;
+         width: ${px2vw(302)};
+         height: ${px2vw(402)};
       }
    }
-   @media(min-width: 1120px) {
-      min-width: 18.75rem;
-      min-height: 25rem;
-      img {
-         width: 18.75rem;
-         height: 25rem;
-      }
-   }   
 `

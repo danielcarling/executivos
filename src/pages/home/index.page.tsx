@@ -64,7 +64,7 @@ export default function Home() {
             </ContactUs>
 
             <StayIn>
-               <h1>FIQUE POR DENTRO</h1>
+               <h2>FIQUE POR DENTRO</h2>
                <Image
                   src={ventureBuilder}
                   sizes="100vw"
