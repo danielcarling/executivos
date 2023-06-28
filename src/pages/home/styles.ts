@@ -184,11 +184,61 @@ export const ImgSection = styled.div`
 
 export const OurCulture = styled.section`
    h2 {
-      font-size: 2.5rem;
+      
       font-weight: 700;
    }
+
+   @media(min-width: 375px) {
+      h2 {
+         font-size: 1.8rem;
+         padding: .6rem 0 .6rem 1.5rem;
+      }
+   }
+   @media(min-width: 768px) {
+      h2 {
+         font-size: 1.8rem;
+         padding: 1rem 0 1rem 2.5rem;
+      }
+   }
+   @media(min-width: 1120px) {
+      h2 {
+         font-size: 2.5rem;
+         padding: 1rem 0 1rem 4rem;
+      }
+   }  
 `
 
 export const Carousel = styled.div`
-   padding-left: 5rem;
+   
+`
+
+export const CarouselItem = styled.div`
+   img {
+      object-fit: cover;
+   }
+   
+   @media(min-width: 375px) {
+      min-width: 15rem;
+      min-height: 20rem;
+      img {
+         width: 15rem;
+         height: 20rem;
+      }
+   }
+   @media(min-width: 768px) {
+      min-width: 16.5rem;
+      min-height: 22rem;
+      img {
+         width: 16.5rem;
+         height: 22rem;
+      }
+   }
+   @media(min-width: 1120px) {
+      min-width: 18.75rem;
+      min-height: 25rem;
+      img {
+         width: 18.75rem;
+         height: 25rem;
+      }
+   }   
 `
