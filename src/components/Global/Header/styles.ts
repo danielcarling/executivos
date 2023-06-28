@@ -1,4 +1,5 @@
 import { css, styled } from "styled-components";
+import px2vw from "@/utils/px2vw";
 
 interface MenuButtonProps {
    isMenuOpen: boolean,
@@ -10,7 +11,6 @@ export const HeaderWrapper = styled.header<MenuButtonProps>`
          return css`
             position: sticky;
             top: 0;
-            width: 100%;
       `;
       } else {
          return css``;
@@ -23,53 +23,45 @@ export const LogoAndLogin = styled.div`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 0.5rem;
+   padding: ${px2vw(8)};
    background-color: ${props => props.theme.color.secondary_100};
 
    img {
-      width: 120px;
-      margin: 0 1rem;
+      width: ${px2vw(322)};
+      margin: 0 ${px2vw(74)};
    };
 
    div {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-right: 2rem;
-
-      a {
-         font-size: 0.5rem;
-      }
+      gap: ${px2vw(18)};
+      margin-right: ${px2vw(50)};
    };
-
-   @media(min-width: 768px) {
-      div {
-         margin-right: 2rem;
-
-         a {
-            font-size: .8rem;
-         }
-      };
-
-      img {
-         width: 322px;
-         margin-left: 4rem;
-      };
-   }
 `;
 
 
 export const DesktopNav = styled.nav`
+   display: none;
    justify-content: space-between;
    align-items: center;
-
+   font-size: ${px2vw(20)};
    background-color: ${props => props.theme.color.primary_100};
-   padding: 0.8rem;
+   padding: ${px2vw(13)};
+
+   .navbar1 {
+      margin-left: ${px2vw(134)};
+   }
+
+   .navbar2 {
+      margin-right: ${px2vw(52)};
+   }
 
    ul {
       display: flex;
       align-items: center;
       list-style: none;
+      gap: ${px2vw(32)};
+      margin: 0 ${px2vw(32)};
    }
 
    a {
@@ -77,42 +69,30 @@ export const DesktopNav = styled.nav`
       color: ${props => props.theme.color.secondary_80};
    }
 
-   @media(min-width: 375px) {
-      display: none;
-   };
-
    @media(min-width: 768px) {
       display: flex;
-      font-size: 0.85rem;
-      ul {
-         gap: 1.5rem;
-         margin: 0 0.5rem;
-      }
-   };
+   }; 
    
    @media(min-width: 1120px) {
       display: flex;
-      font-size: 1.1rem;
-      ul{
-         gap: 2rem;
-         margin: 0 2rem;
-      }
    }
    `;
 
 export const MobileNav = styled.nav<MenuButtonProps>`
    background-color: ${props => props.theme.color.primary_100};
    width: 100%;
-   padding: 0.5rem 0;
+   padding: ${px2vw(32)} 0;
 
    ul {
       list-style: none;
-      height: 100vh;
+      height: 100%;
       width: 100vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+      font-size: 2rem;
+      background-color: ${props => props.theme.color.primary_100};
    }
 
    a {
@@ -122,22 +102,19 @@ export const MobileNav = styled.nav<MenuButtonProps>`
 
    @media(min-width: 375px) {
       ul {
-         position: fixed;
          display: flex;
-         background-color: ${props => props.theme.color.primary_100};
       }
    };
    @media(min-width: 768px) {
       display: none;
    };
-   @media(min-width: 1120px) {
-      display: none;
-   }
 
    ${({ isMenuOpen }) => {
       if(isMenuOpen === true) {
          return css`
-            position: fixed;
+            ul {
+               position: fixed;
+            }
          `;
       } else {
          return css`
@@ -152,11 +129,11 @@ export const MobileNav = styled.nav<MenuButtonProps>`
 export const MenuButton = styled.button`
    background: transparent;
    border: 0;
-   padding: 0.5rem;
+   padding: ${px2vw(8)};
    cursor: pointer;
 
    &:hover {
-      transform: scale(1.10);
+      transform: scale(1.05);
    }
 
    &:active {
@@ -167,9 +144,6 @@ export const MenuButton = styled.button`
       display: block;
    }
    @media(min-width: 768px) {
-      display: none;
-   }
-   @media(min-width: 1120px) {
       display: none;
    }
 `

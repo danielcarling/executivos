@@ -2,7 +2,7 @@ import Header from "@/components/Global/Header";
 import ExecutivosBanner from "@/components/Global/Banner";
 import ContactForm from "@/components/Page/Home/ContactUsForm";
 
-import { Carousel, ContactUs, ContactUsImage, Container, ExecutivosLogo, ImgSection, Jobs, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
+import { Carousel, CarouselItem, ContactUs, ContactUsImage, Container, ExecutivosLogo, ImgSection, Jobs, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
 
 import Image from "next/image";
 import logoImg from '../../../public/logo.svg'
@@ -19,9 +19,36 @@ import carrosselArt2 from '../../../public/carrossel1/2.png'
 import carrosselArt3 from '../../../public/carrossel1/3.png'
 import carrosselArt4 from '../../../public/carrossel1/4.png'
 
-
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 export default function Home() {
+   const [sliderRef] = useKeenSlider({
+      slides: {
+         perView: "auto",
+         spacing: 22,
+      }
+   })
+   
+   
+   // const [sliderRef] = useKeenSlider<HTMLDivElement>({
+   //    breakpoints: {
+   //      "(min-width: 375px)": {
+   //        slides: { perView: 1.5, spacing: 10 },
+   //      },
+   //      "(min-width: 600px)": {
+   //       slides: { perView: 2.3, spacing: 10 },
+   //     },
+   //      "(min-width: 768px)": {
+   //        slides: { perView: 3.2, spacing: 20 },
+   //      },
+   //      "(min-width: 1120px)": {
+   //        slides: { perView: 4.7, spacing: 23 },
+   //      },
+   //    },
+   //    slides: { perView: 1 },
+   //  })
+   
    return (
       <Container>
          <Header />
@@ -110,31 +137,71 @@ export default function Home() {
             <OurCulture>
                <h2>NOSSA CULTURA</h2>
 
-               <Carousel>
-                  <Image
-                     src={carrosselArt1}
-                     width={302}
-                     height={402}
-                     alt=""
-                  />
-                  <Image
-                     src={carrosselArt2}
-                     width={302}
-                     height={402}
-                     alt=""
-                  />
-                  <Image
-                     src={carrosselArt3}
-                     width={302}
-                     height={402}
-                     alt=""
-                  />
-                  <Image
-                     src={carrosselArt4}
-                     width={302}
-                     height={402}
-                     alt=""
-                  />
+               <Carousel ref={sliderRef} className="keen-slider">
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt1}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt2}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt3}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt4}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt1}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt2}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt3}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
+                  <CarouselItem className="keen-slider__slide">
+                     <Image
+                        src={carrosselArt4}
+                        width={600}
+                        height={800}
+                        alt=""
+                     />
+                  </CarouselItem>
                </Carousel>
             </OurCulture>
          </Main>

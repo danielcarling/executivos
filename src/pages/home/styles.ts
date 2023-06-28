@@ -1,7 +1,8 @@
+import px2vw from "@/utils/px2vw";
 import { styled } from "styled-components";
 
 interface ContainerProps {
-  type: boolean;
+   type: boolean;
 }
 
 export const Container = styled.div``;
@@ -19,7 +20,8 @@ export const ContactUs = styled.section`
 `;
 
 export const ContactUsImage = styled.div`
-   width: 50%;
+   min-width: 50%;
+   max-width: 50%;
    height: auto;
    background-image: url('https://images.pexels.com/photos/5313169/pexels-photo-5313169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
    background-position: center;
@@ -33,43 +35,24 @@ export const ContactUsImage = styled.div`
 
    p {
       line-height: 1.2;
+      font-size: 2.5rem;
+      padding: 0 2.5rem;
    }
 
-   @media(min-width: 375px) {
-      p {
-         font-size: 1.2rem;
-      }
-      span {
-         font-size: 1rem;
-      }
-   }
-   
-   @media(min-width: 375px) {
-      p {
-         font-size: 1.7rem;
-      }
-      span {
-         font-size: 1.3rem;
-      }
-   }
-   
-   @media(min-width: 1120px) {
-      p {
-         font-size: 2.3rem;
-      }
-      span {
-         font-size: 1.5rem;
-      }
+   span {
+      font-size: 1.8rem;
    }
 `;
 
 export const StayIn = styled.section`
    background-color: ${props => props.theme.color.primary_100};
+   padding: ${px2vw(8)};
    color: black;
-   margin-top: 1rem;
+   padding: ${px2vw(16)} ${px2vw(116)} 0 ${px2vw(116)};
 
    h1 {
-      padding: 0 1rem;
+      font-size: 1.5rem;
+      padding: 0 ${px2vw(16)};
       font-weight: 700;
    };
 
@@ -81,6 +64,7 @@ export const StayIn = styled.section`
 
    div {
       display: flex;
+      gap: ${px2vw(85)};
    }
 
    @media(min-width: 375px) {
@@ -90,6 +74,9 @@ export const StayIn = styled.section`
       };
       div {
          flex-direction: column;
+         img {
+            width: 100%;
+         }
       }
    };
 
@@ -100,6 +87,9 @@ export const StayIn = styled.section`
       };
       div {
          flex-direction: row;
+         img {
+            width: 50%;
+         }
       }
    }
 
@@ -110,6 +100,9 @@ export const StayIn = styled.section`
       };
       div {
          flex-direction: row;
+         img {
+            width: 50%;
+         }
       }
    }
 `
@@ -184,11 +177,61 @@ export const ImgSection = styled.div`
 
 export const OurCulture = styled.section`
    h2 {
-      font-size: 2.5rem;
+      
       font-weight: 700;
    }
+
+   @media(min-width: 375px) {
+      h2 {
+         font-size: 1.8rem;
+         padding: .6rem 0 .6rem 1.5rem;
+      }
+   }
+   @media(min-width: 768px) {
+      h2 {
+         font-size: 1.8rem;
+         padding: 1rem 0 1rem 2.5rem;
+      }
+   }
+   @media(min-width: 1120px) {
+      h2 {
+         font-size: 2.5rem;
+         padding: 1rem 0 1rem 4rem;
+      }
+   }  
 `
 
 export const Carousel = styled.div`
+   
+`
 
+export const CarouselItem = styled.div`
+   img {
+      object-fit: cover;
+   }
+   
+   @media(min-width: 375px) {
+      min-width: 15rem;
+      min-height: 20rem;
+      img {
+         width: 15rem;
+         height: 20rem;
+      }
+   }
+   @media(min-width: 768px) {
+      min-width: 16.5rem;
+      min-height: 22rem;
+      img {
+         width: 16.5rem;
+         height: 22rem;
+      }
+   }
+   @media(min-width: 1120px) {
+      min-width: 18.75rem;
+      min-height: 25rem;
+      img {
+         width: 18.75rem;
+         height: 25rem;
+      }
+   }   
 `

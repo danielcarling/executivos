@@ -1,71 +1,41 @@
 import { styled } from "styled-components";
+import px2vw from "@/utils/px2vw";
 
 export const Form = styled.form`
-   height: 100%;
    margin: auto;
-   padding: 2rem;
-
+   padding: ${px2vw(50)};
+   font-size: 1.5rem;
    input {
-      
-   }
-
-   @media(min-width: 375px) {
-      padding: 1rem;
-      font-size: .8rem;
-      input {
-         padding: 0;
-         font-size: 0.6rem;
-         border-radius: 6px;
-      }
-   }
-
-   @media(min-width: 768px) {
-      padding: 2rem 0;
-      font-size: 0.8rem;
-      input {
-         font-size: 0.8rem;
-         padding: .5rem;
-      }
-   }
-
-   @media(min-width: 1120px) {
-      padding: 2rem 0;
-      font-size: 1rem;
-      input {
-         font-size: 1rem;
-         padding: 1rem;
-      }
+      font-weight: 700;
+      font-size: 1.5rem;
+      border-radius: ${px2vw(12)};
    }
 `
 
 export const NameAndPhone = styled.div`
    display: flex;
+   flex-direction: column;
+   
 
    @media(min-width: 375px) {
       flex-direction: column;
-      gap: 0;
    }
 
    @media(min-width: 768px) {
+      gap: ${px2vw(30)};
       flex-direction: row;
-      gap: 1rem;
-   }
-
-   @media(min-width: 1120px) {
-      flex-direction: row;
-      gap: 1rem;
    }
 `
 
 export const ContactInput = styled.div`
    display: flex;
    flex-direction: column;
-   margin-bottom: .4rem;
+   margin-bottom: ${px2vw(30)};
 
    input {
       width: 100%;
-      padding: .2rem;
-      border-radius: 8px;
+      padding: ${px2vw(4)};
+      border-radius: ${px2vw(12)};
       background-color: black;
       color: ${props => props.theme.color.primary_100};
 
