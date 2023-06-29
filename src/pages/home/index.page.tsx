@@ -2,10 +2,11 @@ import Header from "@/components/Global/Header";
 import ExecutivosBanner from "@/components/Global/Banner";
 import ContactForm from "@/components/Page/Home/ContactUsForm";
 
-import { Carousel, CarouselItem, ContactUs, ContactUsImage, Container, Events, EventsImage, EventsInfo, ExecutivosLogo, ImgSection, Jobs, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
+import { Carousel, CarouselItem, ContactUs, ContactUsImage, Container, Events, EventsImage, EventsInfo, Execution, ImgSection, Jobs, LogoContainer, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
 
 import Image from "next/image";
-import logoImg from '../../../public/logo.svg'
+import logoImg1 from '../../../public/logo1.svg'
+import logoImg2 from '../../../public/logo2.svg'
 import ventureBuilder from '../../../public/venture-builder.png'
 import arte1 from '../../../public/stay-in-arte1.png'
 import arte2 from '../../../public/stay-in-arte2.png'
@@ -21,7 +22,6 @@ import carrosselArt4 from '../../../public/carrossel1/4.png'
 
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import Logo from "@/components/Page/Home/LogoExecutivos";
 
 export default function Home() {
    const [sliderRef] = useKeenSlider({
@@ -30,26 +30,6 @@ export default function Home() {
          spacing: 22,
       }
    })
-
-
-   // const [sliderRef] = useKeenSlider<HTMLDivElement>({
-   //    breakpoints: {
-   //      "(min-width: 375px)": {
-   //        slides: { perView: 1.5, spacing: 10 },
-   //      },
-   //      "(min-width: 600px)": {
-   //       slides: { perView: 2.3, spacing: 10 },
-   //     },
-   //      "(min-width: 768px)": {
-   //        slides: { perView: 3.2, spacing: 20 },
-   //      },
-   //      "(min-width: 1120px)": {
-   //        slides: { perView: 4.7, spacing: 23 },
-   //      },
-   //    },
-   //    slides: { perView: 1 },
-   //  })
-
    return (
       <Container>
          <Header />
@@ -86,7 +66,14 @@ export default function Home() {
             </StayIn>
 
 
-            <Logo />
+            <LogoContainer>
+               <Image
+                  src={logoImg1}
+                  width={732}
+                  height={158}
+                  alt="Logo Executivos"
+               />
+            </LogoContainer>
 
             <Jobs>
                <OurJobsArt>
@@ -197,7 +184,7 @@ export default function Home() {
                   </CarouselItem>
                </Carousel>
             </OurCulture>
-            
+
             <Events>
                <h2>PRÓXIMOS EVENTOS</h2>
                <EventsInfo>
@@ -208,11 +195,19 @@ export default function Home() {
                </EventsInfo>
             </Events>
 
-
-            <section>
-               <Logo />
-               <h2>UM POUCO DA NOSSA EXECUÇÕ</h2>
-            </section>
+            <Execution>
+               <LogoContainer>
+                  <Image
+                     src={logoImg2}
+                     width={732}
+                     height={158}
+                     alt="Logo Executivos"
+                  />
+               </LogoContainer>
+              <h2>UM POUCO DA NOSSA EXECUÇÃO</h2>
+              <div className="underline"/>
+               
+            </Execution>
          </Main>
       </Container>
    )

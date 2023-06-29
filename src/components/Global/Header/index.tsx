@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { DesktopNav, HeaderWrapper, LogoAndLogin, MenuButton, MobileNav } from "./styles";
 
-import logoImg from '../../../../public/logo.svg'
+import logoImg from '../../../../public/logo1.svg'
 import Link from "next/link";
 import { LoginButton } from "../LoginButton";
 import menuButton from '../../../../public/menu.svg'

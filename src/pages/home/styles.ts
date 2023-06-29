@@ -85,13 +85,13 @@ export const StayIn = styled.section`
    }
 `
 
-export const ExecutivosLogo = styled.div`
+export const LogoContainer = styled.div`
    display: flex;
    justify-content: center;
    img {
-      max-width: ${px2vw(732)};
-      max-height: ${px2vw(150)};
-      margin: ${px2vw(50)} 0;
+      width: ${px2vw(732)};
+      height: ${px2vw(158)};
+      margin: ${px2vw(60)} 0;
    }
 `
 
@@ -208,3 +208,38 @@ export const EventsImage = styled.div`
       padding: 0 ${px2vw(40)};
    }
 `;
+
+export const Execution = styled.section`
+   background-color: ${props => props.theme.color.primary_100};
+   h2 {
+      position: relative;
+      z-index: 1;
+      display: inline;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: black;
+      margin: ${px2vw(40)} 0 0 ${px2vw(116)};
+   }
+   .underline {
+      position: relative;
+      top: ${px2vw(-25)};
+      z-index: 0;
+      margin-left: ${px2vw(116)};
+      width: ${px2vw(870)};
+      height: ${px2vw(35)};
+      background-color: white;
+   }
+
+   @media(min-width: 768px) {
+      .underline {
+         width: ${px2vw(652)};
+      }
+   }
+   @media(min-width: 1024px) {
+      .underline {
+         width: ${px2vw(580)};
+         top: ${px2vw(-25)};
+         bottom: 20px;
+      }
+   }
+`
