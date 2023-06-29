@@ -2,7 +2,7 @@ import Header from "@/components/Global/Header";
 import ExecutivosBanner from "@/components/Global/Banner";
 import ContactForm from "@/components/Page/Home/ContactUsForm";
 
-import { Carousel, CarouselItem, ContactUs, ContactUsImage, Container, ExecutivosLogo, ImgSection, Jobs, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
+import { Carousel, CarouselItem, ContactUs, ContactUsImage, Container, Events, EventsImage, EventsInfo, ExecutivosLogo, ImgSection, Jobs, Main, OurCulture, OurJobsArt, StayIn } from "./styles";
 
 import Image from "next/image";
 import logoImg from '../../../public/logo.svg'
@@ -21,6 +21,7 @@ import carrosselArt4 from '../../../public/carrossel1/4.png'
 
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import Logo from "@/components/Page/Home/LogoExecutivos";
 
 export default function Home() {
    const [sliderRef] = useKeenSlider({
@@ -29,8 +30,8 @@ export default function Home() {
          spacing: 22,
       }
    })
-   
-   
+
+
    // const [sliderRef] = useKeenSlider<HTMLDivElement>({
    //    breakpoints: {
    //      "(min-width: 375px)": {
@@ -48,7 +49,7 @@ export default function Home() {
    //    },
    //    slides: { perView: 1 },
    //  })
-   
+
    return (
       <Container>
          <Header />
@@ -60,7 +61,7 @@ export default function Home() {
                   <p>QUER FALAR DIRETAMENTE CONOSCO</p>
                   <span>PREENCHA</span>
                </ContactUsImage>
-               <ContactForm />
+               <ContactForm inputColor="black" />
             </ContactUs>
 
             <StayIn>
@@ -85,15 +86,9 @@ export default function Home() {
             </StayIn>
 
 
-           <ExecutivosLogo>
-               <Image
-                  src={logoImg}
-                  sizes="100vw"
-                  alt=""
-               />
-            </ExecutivosLogo>
+            <Logo />
 
-            {/* <Jobs>
+            <Jobs>
                <OurJobsArt>
                   <Image
                      src={arteNossosServicos}
@@ -122,17 +117,15 @@ export default function Home() {
                   </div>
                   <div>
                      <p>CONSULTORIA</p>
-                     <footer>
-                        <Image
-                           src={nossosServicosArte3}
-                           width={581}
-                           height={182}
-                           alt=""
-                        />
-                     </footer>
+                     <Image
+                        src={nossosServicosArte3}
+                        width={581}
+                        height={182}
+                        alt=""
+                     />
                   </div>
                </ImgSection>
-            </Jobs> */}
+            </Jobs>
 
             <OurCulture>
                <h2>NOSSA CULTURA</h2>
@@ -204,6 +197,22 @@ export default function Home() {
                   </CarouselItem>
                </Carousel>
             </OurCulture>
+            
+            <Events>
+               <h2>PRÓXIMOS EVENTOS</h2>
+               <EventsInfo>
+                  <EventsImage>
+                     <p>SE INSCREVA AO LADO E SAIBA DOS EVENTOS PRESENCIAIS E ONLINE</p>
+                  </EventsImage>
+                  <ContactForm inputColor="yellow" />
+               </EventsInfo>
+            </Events>
+
+
+            <section>
+               <Logo />
+               <h2>UM POUCO DA NOSSA EXECUÇÕ</h2>
+            </section>
          </Main>
       </Container>
    )

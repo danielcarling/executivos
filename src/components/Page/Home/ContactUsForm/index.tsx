@@ -1,8 +1,12 @@
 import { ContactInput, Form, NameAndPhone } from "./styles";
 
-export default function ContactForm() {
+interface FormProps {
+   inputColor: 'yellow' | 'black',
+}
+
+export default function ContactForm({ inputColor }: FormProps) {
    return (
-      <Form>
+      <Form inputColor={inputColor}>
          <NameAndPhone>
             <ContactInput>
                <label htmlFor="name">NOME</label>

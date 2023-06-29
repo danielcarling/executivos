@@ -1,6 +1,8 @@
 import px2vw from "@/utils/px2vw";
 import { styled } from "styled-components";
 
+import img from '../../../public/banner.png'
+
 interface ContainerProps {
    type: boolean;
 }
@@ -36,7 +38,7 @@ export const ContactUsImage = styled.div`
    p {
       line-height: 1.2;
       font-size: 2.5rem;
-      padding: 0 2.5rem;
+      padding: 0 ${px2vw(40)};
    }
 
    span {
@@ -97,20 +99,26 @@ export const Jobs = styled.section`
    display: flex;
    justify-content: space-between;
    background-color: ${props => props.theme.color.primary_100};
-   margin: 0 6rem;
-   border-radius: 30;
-   font-size: 1.5rem;
+   margin: 0 ${px2vw(96)};
+   border-radius: ${px2vw(30)};
    color: black;
+   font-size: 1.3rem;
 
    p {
       font-weight: 400;
-      max-width: 280px;
+      width: ${px2vw(280)};
+   }
+
+   @media(min-width: 768px) {
+      font-size: 1.5rem;
    }
 `
 
 export const OurJobsArt = styled.div`
    img {
-      padding: 1rem 1rem 0.7rem 1rem;
+      padding:  ${px2vw(16)} ${px2vw(16)} ${px2vw(12)} ${px2vw(16)};
+      width: ${px2vw(350)};
+      height: ${px2vw(622)};
    }
 `
 
@@ -118,21 +126,17 @@ export const ImgSection = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: space-around;
-   padding-right: 2rem;
+   padding-right: ${px2vw(32)};
 
-   div, footer {
+   div {
       display: flex;
       justify-content: flex-end;
       align-items: center;
    }
 
    img {
-      width: 100%;
-   }
-
-   footer {
-      max-width: 500px;
-      height: auto;
+      width: ${px2vw(581)};
+      height: ${px2vw(181)};
    }
 `
 
@@ -140,12 +144,12 @@ export const OurCulture = styled.section`
    h2 {      
       font-weight: 700;
       font-size: 2.5rem;
-      margin: ${px2vw(21)} 0 ${px2vw(16)} ${px2vw(116)};
+      margin: ${px2vw(80)} 0 ${px2vw(20)} ${px2vw(116)};
    }
 `
 
 export const Carousel = styled.div`
-   
+
 `
 
 export const CarouselItem = styled.div`
@@ -167,3 +171,40 @@ export const CarouselItem = styled.div`
       }
    }
 `
+
+export const Events = styled.section`
+   font-weight: bold;
+   h2 {
+      margin: ${px2vw(74)} 0 ${px2vw(36)} ${px2vw(116)};
+      font-size: 2.5rem;
+      font-weight: bold;
+   }
+`;
+
+export const EventsInfo = styled.div`
+   display: flex;
+   background-color: black;
+`
+
+export const EventsImage = styled.div`
+   min-width: 50%;
+   max-width: 50%;
+   height: auto;
+   background: 
+   linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+   url(https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+   
+   background-position: top left;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: white;
+   text-align: center;
+
+   p {
+      line-height: 1.2;
+      font-size: 2.5rem;
+      padding: 0 ${px2vw(40)};
+   }
+`;
