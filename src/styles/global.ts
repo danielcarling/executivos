@@ -25,10 +25,9 @@ const GlobalStyle = createGlobalStyle`
    line-height: 1.6;
   };
   
-  body, input, textarea, button {
-   font-family: 'Barlow', sans-serif;
-   color: white;
-}
+   body, input, textarea, button {
+      font-family: 'Barlow', sans-serif;
+   }
 `;
 
 export default GlobalStyle;
